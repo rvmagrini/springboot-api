@@ -43,6 +43,10 @@ public class User {
 		this.dateOfBirth = dateOfBirth;
 		this.age = age;
 	}
+	
+	public User() {
+		
+	}
 
 	
 	public Long getId() {
