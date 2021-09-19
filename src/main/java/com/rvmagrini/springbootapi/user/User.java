@@ -1,6 +1,7 @@
 package com.rvmagrini.springbootapi.user;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -27,21 +29,21 @@ public class User {
 	private String name;
 	private String email;
 	private LocalDate dateOfBirth;
+	
+	@Transient
 	private Integer age;
 
-	public User(Long id, String name, String email, LocalDate dateOfBirth, Integer age) {
+	public User(Long id, String name, String email, LocalDate dateOfBirth) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
-		this.age = age;
 	}
 
-	public User(String name, String email, LocalDate dateOfBirth, Integer age) {
+	public User(String name, String email, LocalDate dateOfBirth) {
 		this.name = name;
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
-		this.age = age;
 	}
 	
 	public User() {
@@ -82,7 +84,7 @@ public class User {
 	}
 
 	public Integer getAge() {
-		return age;
+		return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
 	}
 
 	public void setAge(Integer age) {

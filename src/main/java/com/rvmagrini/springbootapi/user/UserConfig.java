@@ -17,15 +17,13 @@ public class UserConfig {
 			User marie = new User(
 						"Marie", 
 						"marie@gmail.com", 
-						LocalDate.of(2000, Month.JANUARY, 12),
-						21
+						LocalDate.of(2000, Month.JANUARY, 12)
 						);
 			
 			User john = new User(
 					"John", 
 					"john@gmail.com", 
-					LocalDate.of(2005, Month.APRIL, 03),
-					21
+					LocalDate.of(2005, Month.APRIL, 03)
 					);
 			
 			repository.saveAll(

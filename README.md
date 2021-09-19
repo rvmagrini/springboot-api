@@ -13,6 +13,7 @@ TASKS:
 - [2.2] Map Entity and connect with DB
 - [2.3] Create JPA Repository Interface
 - [2.4] Save users into Database
+- [2.5] Handle age case using Transient Annotation and Period Java Time with birthday data
 
 
 
