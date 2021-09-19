@@ -1,6 +1,7 @@
 package com.rvmagrini.springbootapi.user;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,15 @@ public class UserService {
 
 	public List<User> getUsers() {
 		return userRepository.findAll();
+	}
+	
+	public void addNewUser(User user) {
+		System.out.println(user);
+		Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
+		if (userOptional.isPresent()) {
+			throw new IllegalStateException("Email already taken.");
+		}
+		userRepository.save(user);
 	}
 
 }
