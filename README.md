@@ -11,7 +11,7 @@ TASKS:
 TASKS:
 - [2.1] Create Entity, Controller and Service Layer
 - [2.2] Map Entity and connect with DB
-- [2.3] Repository
+- [2.3] Create JPA Repository Interface
 
 
 
