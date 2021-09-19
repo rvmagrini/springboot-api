@@ -14,8 +14,9 @@ TASKS:
 - [2.3] Create JPA Repository Interface
 - [2.4] Save users into Database
 - [2.5] Handle age case using Transient Annotation and Period Java Time with birthday data
-- [2.6] Create Add Users functionality with Email exception (POST)
-- [2.7] Create Delete User functionality if ID exists (DELETE)
+- [2.6] Create Add Users functionality with Email exception (POST METHOD)
+- [2.7] Create Delete User functionality if ID exists (DELETE METHOD)
+- [2.8] Create Update User functionality (PUT METHOD)
 
 
 
