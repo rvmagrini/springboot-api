@@ -2,7 +2,27 @@ package com.rvmagrini.springbootapi.user;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="springbootapi")
 public class User {
+	@Id
+	@SequenceGenerator(
+			name = "user_sequence",
+			sequenceName = "user_sequence",
+			allocationSize = 1
+			)
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "user_sequence"
+			)
 	private Long id;
 	private String name;
 	private String email;
@@ -10,7 +30,6 @@ public class User {
 	private Integer age;
 
 	public User(Long id, String name, String email, LocalDate dateOfBirth, Integer age) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -19,7 +38,6 @@ public class User {
 	}
 
 	public User(String name, String email, LocalDate dateOfBirth, Integer age) {
-		super();
 		this.name = name;
 		this.email = email;
 		this.dateOfBirth = dateOfBirth;
@@ -67,6 +85,7 @@ public class User {
 		this.age = age;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", age=" + age + ", dateOfBirth="
